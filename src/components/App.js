@@ -4,15 +4,29 @@ import List from './List'
 
 class App extends Component {
     constructor(props){
-        super(props)
+        super(props);
         this.state = {
             data: []
         }
     }
 
+
+    loadDataFromVar (){
+        const data = [
+            {name: "Juan Cruz", number: "+380999999999", company: "Computer company", email: "lx@mail.com"},
+            {name: "Norah Jones", number: "+380221113434", company: "Data center", email: "user@mail.com"}
+        ];
+        this.setState({data: data});
+    }
+
     handleContactSubmit (contact){
         this.state.data.push(contact);
         console.log(this.state.data);
+    }
+
+    componentDidMount (){
+        this.loadDataFromVar();
+        setInterval(this.loadDataFromVar, this.props.pollInterval);
     }
 
     render (){

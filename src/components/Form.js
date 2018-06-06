@@ -2,6 +2,11 @@ import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 
 class Form extends Component{
+    constructor(props) {
+        super(props);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
     handleSubmit (e){
         e.preventDefault();
         const name = ReactDOM.findDOMNode(this.refs.name).value.trim();
