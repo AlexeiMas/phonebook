@@ -42,7 +42,7 @@ class Form extends Component{
                        pattern="380[0-9]{9}" title='Input 380 and 9 digits'/>
                 <input defaultValue='IT' type="text" className="form-control" placeholder="Company" ref="company" />
                 <input defaultValue='user@mail.com' type="email" className="form-control" placeholder="Email" ref="email" />
-                <button type="submit" className="btn btn-success">Add Contact</button>
+                <br/><button type="submit" className="btn btn-success">Add Contact</button>
             </form>
         );
     }
