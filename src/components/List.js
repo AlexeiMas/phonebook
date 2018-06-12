@@ -3,13 +3,15 @@ import React, {Component} from 'react'
 import "./list.css"
 
 class List extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            search: '',
-            edit: false
-        };
-    }
+   constructor(props) {
+    super(props);
+    this.state = {
+        search: '',
+        edit: false
+    };
+    this.rendNorm = this.rendNorm.bind(this);
+    this.rendEdit = this.rendEdit.bind(this);
+   };
 
     updateSearch(event) {
         this.setState({
@@ -17,14 +19,13 @@ class List extends Component{
         })
     }
 
-    edit(){
+    edit = () =>{
         this.setState({edit: true});
-        console.log("lose")
-    }
+    };
 
-    save(){
+    save = () => {
         this.setState({edit: false})
-    }
+    };
 
     rendNorm(contact, index){
         return(
@@ -45,7 +46,7 @@ class List extends Component{
                         <td className="contact-company col-2"><p >{contact.company}</p></td>
                         <td className="contact-email col-2"><p >{contact.email}</p></td>
                         <td className="col-2">
-                            <button onClick={List.edit}>Edit</button>
+                            <button onClick={this.edit}>Edit</button>
                         </td>
                     </tr>
                     </tbody>
@@ -56,7 +57,7 @@ class List extends Component{
 
     rendEdit(contact, index){
         return(
-            <div key={index+1}>
+            <div key={index}>
                 <table className='table table-bordered' style={{marginBottom: '0'}}>
                     <tbody>
                     <tr className='row' style={{margin: "0"}}>
@@ -66,7 +67,7 @@ class List extends Component{
                         <td className="col-2"><textarea defaultValue={contact.company}/></td>
                         <td className="col-2"><textarea defaultValue={contact.email}/></td>
                         <td className="col-2">
-                            <button onClick={List.save}>Save</button>
+                            <button onClick={this.save}>Save</button>
                         </td>
                     </tr>
                     </tbody>

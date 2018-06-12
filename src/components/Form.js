@@ -32,7 +32,6 @@ class Form extends Component{
         ReactDOM.findDOMNode(this.refs.number).value = '';
         ReactDOM.findDOMNode(this.refs.company).value = '';
         ReactDOM.findDOMNode(this.refs.email).value = '';
-        return
     }
     render (){
         return (
