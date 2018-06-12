@@ -21,6 +21,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # ignore
-package-lock.json
-package.json
 README.md

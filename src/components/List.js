@@ -8,7 +8,7 @@ class List extends Component{
         this.state = {
             search: '',
             edit: false
-        }
+        };
     }
 
     updateSearch(event) {
@@ -21,7 +21,6 @@ class List extends Component{
         this.setState({edit: true});
         console.log("lose")
     }
-    re_move(){}
 
     save(){
         this.setState({edit: false})
@@ -47,7 +46,6 @@ class List extends Component{
                         <td className="contact-email col-2"><p >{contact.email}</p></td>
                         <td className="col-2">
                             <button onClick={List.edit}>Edit</button>
-                            <button onClick={List.re_move}>Remove</button>
                         </td>
                     </tr>
                     </tbody>
